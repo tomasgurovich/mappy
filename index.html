@@ -50,7 +50,6 @@
                      + "<li><h4>{{placename}}</h4></li></ul>"
         var geoJSON = Sheetsee.createGeoJSON(data, optionsJSON)
         
-         L.circle([50.5, 30.5], 2000).addTo(map)
 
         var map = Sheetsee.loadMap("map")
         // Try different map tiles? examples.map-20v6611k
@@ -61,6 +60,8 @@
         // examples.map-i86nkdio
         // examples.h186knp8
         
+                 L.circle([50.5, 30.5], 20000).addTo(map)
+
         Sheetsee.addTileLayer(map, 'jllord.n7aml2bc')
 
         Sheetsee.addMarkerLayer(geoJSON, map, template)
