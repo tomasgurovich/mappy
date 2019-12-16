@@ -23,17 +23,38 @@
     <div id="map"></div>
 
     <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', function() {
+      //  document.addEventListener('DOMContentLoaded', function() {
         // see how what the example spreadsheet looks like:
         // https://docs.google.com/spreadsheet/lv?key=0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc
         // https://docs.google.com/spreadsheets/d/e/2PACX-1vTp5CBd_wFTgfgmhD84jYmMcKp8BKRtrIpOPtwBJdiC-4LvEJa2gLtDbH4UpdKSUJeEMsuLlyndF0aO/pubhtml
         // https://docs.google.com/spreadsheets/d/1gr3lpwitEZF3QcWfIXak2-E3brJ_XLh09Q792U5yJfg/edit?usp=sharing 
-        Tabletop.init( { 
-          key: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTp5CBd_wFTgfgmhD84jYmMcKp8BKRtrIpOPtwBJdiC-4LvEJa2gLtDbH4UpdKSUJeEMsuLlyndF0aO/pubhtml', 
-          callback: showInfo, 
-          simpleSheet: true } )
-      })
+      //  Tabletop.init( { 
+        //  key: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTp5CBd_wFTgfgmhD84jYmMcKp8BKRtrIpOPtwBJdiC-4LvEJa2gLtDbH4UpdKSUJeEMsuLlyndF0aO/pubhtml', 
+         // callback: showInfo, 
+         // simpleSheet: true } )
+     // })
 
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type='text/javascript'>    
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTp5CBd_wFTgfgmhD84jYmMcKp8BKRtrIpOPtwBJdiC-4LvEJa2gLtDbH4UpdKSUJeEMsuLlyndF0aO/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+    alert('Successfully processed!')
+    console.log(data);
+  }
+
+  window.addEventListener('DOMContentLoaded', init)
+</script>
+      
+      
+      
+      
       function showInfo(data) {
         // the column headers of the info you want in your popup
         var optionsJSON = ["placename", "photo-url"]
